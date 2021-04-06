@@ -19,7 +19,8 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_params) 
+    @article = Article.new(article_params)
+    @article.user = User.first 
     # require top level article object, and permit to use title and description
     if @article.save
     #redirect_to article_path(@article)  This is same to the below code.
