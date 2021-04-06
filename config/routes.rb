@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'about', to: 'pages#about'
   resources :articles
+  get 'signup', to: 'users#new'
+  resources :users, except: [:new]
   # get all routes for articles
   # only use routes in []
   # provide restful routes to rails resources
